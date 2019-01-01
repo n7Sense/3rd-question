@@ -33,7 +33,7 @@ public class FrequencyByAlgorithm {
         return uniqueWords;
     }
     
-     public void frequencyByAlgorithm(String text){
+     public static void frequencyByAlgorithm(String text){
          
         String[] keys = text.split(" ");
         String[] uniqueKeys;
@@ -50,7 +50,7 @@ public class FrequencyByAlgorithm {
                     count++;
                 }
             }
-            System.out.println(key+"\t\t\t"+count);
+            System.out.println(key+"\t\t\t:"+count);
             count = 0;
         }
          

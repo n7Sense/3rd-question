@@ -32,7 +32,7 @@ public class FrequencyByMap {
         
         while(itr.hasNext()){
             Map.Entry e = (Map.Entry)itr.next();
-            System.out.println(e.getKey()+"\t\t"+e.getValue());
+            System.out.println(e.getKey()+"\t\t\t:"+e.getValue());
         }
     }
     

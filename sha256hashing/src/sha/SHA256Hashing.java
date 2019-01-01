@@ -8,9 +8,7 @@ package sha;
 import com.google.common.hash.Hashing;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.bouncycastle.util.encoders.Hex;
-
 import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.MessageDigest;
 

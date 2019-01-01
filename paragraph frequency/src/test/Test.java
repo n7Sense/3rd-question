@@ -5,11 +5,12 @@
  */
 package test;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
+
 
 /**
  *
@@ -21,21 +22,33 @@ public class Test {
      * @param args the command line arguments
      */
 
-    public static void main(String[] args) {
-        // TODO code application logic here
-  
-        String text = "In Vaishnavism Vishnu is identical to the formless metaphysical concept called Brahman, the supreme the Svayam Bhagavan who takes various"
-                + "avatars as the preserver protector whenever the world is threatened with evil chaos and destructive forces His avatars most notably include"
-                + "Rama in the Ramayana and Krishna in the Mahabharata. He is also known as Narayana , Jagannath , Vasudeva , Vithoba , and Hari. He is one of"
-                + "the five equivalent deities worshipped in Panchayatana puja of the Smarta Tradition of Hinduism In Hindu iconography , Vishnu is usually depicted"
-                + "as having a pale or dark blue complexion and having four arms. He holds a padma (lotus flower) in his lower left hand, Kaumodaki gada (mace) "
-                + "in his lower right hand, Panchajanya shankha (conch) in his upper left hand and the Sudarshana Chakra (discus) in his upper right hand. A"
-                + "traditional depiction is Vishnu reclining on the coils of the serpent Shesha, accompanied by his consort Lakshmi, as he dreams the universe "
-                + "into reality ";
+    public static void main(String[] args) throws IOException{
+       
+        String filePath = System.getProperty("user.dir")+"/src/test/paragraph.txt";
+        StringBuilder contentBuilder = new StringBuilder();
+        try (Stream<String> stream = Files.lines( Paths.get(filePath), StandardCharsets.UTF_8)){
+            stream.forEach(s -> contentBuilder.append(s).append("\n"));
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+ 
+        String content =  contentBuilder.toString();
+        String[] words = content.split(" ");
         
-        String[] words = text.split(" ");
         
-        FrequencyByConcurrentHashMap.frequencyByConcurrentCollection(words);
+        FrequencyByAlgorithm.frequencyByAlgorithm(content);
+        
+            /*
+               ** OR By> Frequency By ConcurrentHashMap
+            */
+        //FrequencyByConcurrentHashMap.frequencyByConcurrentCollection(words);
+        
+            /*
+                ** OR By> Frequency By Concurrent Collection
+            */
+        //FrequencyByConcurrentHashMap.frequencyByConcurrentCollection(words);
+        
         
     }
     

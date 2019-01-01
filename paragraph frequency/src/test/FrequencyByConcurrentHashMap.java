@@ -21,7 +21,7 @@ public class FrequencyByConcurrentHashMap {
         }
         
         for (Map.Entry e : map.entrySet()) {
-            System.out.println(e.getKey() + " = " + e.getValue());
+            System.out.println(e.getKey() + "\t\t\t:" + e.getValue());
         }
         
     }
